@@ -1,0 +1,18 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["sonarjs"],
+  "rules": {
+    "eqeqeq": "warn",
+    "prefer-template": "warn",
+    "no-unused-vars": "warn",
+    "sonarjs/cognitive-complexity": "warn",
+    "sonarjs/no-all-duplicated-branches": "warn",
+    "sonarjs/no-element-overwrite": "warn",
+    "sonarjs/no-identical-functions": "warn",
+    "sonarjs/no-use-of-empty-return-value": "warn",
+    "sonarjs/prefer-immediate-return": "warn",
+    "sonarjs/prefer-object-literal": "warn",
+    "sonarjs/prefer-single-boolean-return": "warn",
+    "sonarjs/prefer-while": "warn"
+  }
+}
