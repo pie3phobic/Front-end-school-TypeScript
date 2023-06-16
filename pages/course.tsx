@@ -30,7 +30,7 @@ const Course: React.FC<PropsDataCourse> = ({ data }) => {
   }, []);
 
   return (
-    <div className="dark:bg-blue-950">
+    <div className="dark:bg-blue-950 pb-10">
       <Header />
       <div className="ml-10">
         <div>
