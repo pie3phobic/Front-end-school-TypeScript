@@ -94,6 +94,7 @@ const Course: React.FC<PropsDataCourse> = ({ data }) => {
             {lessonData.map((lesson) => (
               <div
                 key={lesson.id}
+                // @ts-ignore
                 ref={lessonRef}
                 onClick={() => {
                   lessonRef.current = lesson;

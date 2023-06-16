@@ -3,6 +3,7 @@ import { CourseDataProps } from "../../domain/types";
 
 class ApiClient {
   static instance: ApiClient;
+  // @ts-ignore
   #accessToken: string;
   static async getInstance() {
     if (!ApiClient.instance) {

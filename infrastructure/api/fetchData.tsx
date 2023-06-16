@@ -3,6 +3,7 @@ import { DataProps } from "../../domain/types";
 
 class ApiClient {
   static instance: ApiClient;
+  // @ts-ignore
   #accessToken: string;
 
   private constructor() {}
