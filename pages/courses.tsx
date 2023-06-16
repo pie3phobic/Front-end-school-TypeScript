@@ -4,7 +4,8 @@ import { paginate } from "../domain/paginate";
 import ApiClient from "../infrastructure/api/fetchData";
 import { CourseProps } from "../domain/types";
 import { PaginationProps, DataProps } from "../domain/types";
-import { InfoCard, Pagination } from "minty-ui-library";
+import Pagination from "../ui/common/Pagination";
+import InfoCard from "../ui/courses/InfoCard";
 const Courses: React.FC<DataProps> = ({ data }) => {
   const coursesData: CourseProps[] = data.courses;
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -25,7 +26,7 @@ const Courses: React.FC<DataProps> = ({ data }) => {
       <Header />
       <div className="flex flex-col">
         {paginatedPosts.map((post) => (
-          <InfoCard key={post.id} path={"/course"} {...post} />
+          <InfoCard key={post.id} {...post} />
         ))}
         <Pagination
           items={coursesData.length}
