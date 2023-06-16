@@ -3,7 +3,7 @@ import Banner from "../ui/index/Banner";
 import Footer from "../ui/common/Footer";
 import Header from "../ui/common/Header";
 import Sidebar from "../ui/index/Sidebar";
-import { MediumCard } from "minty-ui-library";
+import MediumCard from "../ui/index/MiddleCard";
 import Link from "next/link";
 import React from "react";
 
