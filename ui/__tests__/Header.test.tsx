@@ -10,7 +10,7 @@ describe("Header component", () => {
   test("renders logo and search bar", () => {
     render(<Header />);
     const logo = screen.getByAltText("StudyLab logo");
-    const searchInput = screen.getByPlaceholderText("Start your search");
+    const searchInput = screen.getByPlaceholderText("Start search");
     expect(logo).toBeInTheDocument();
     expect(searchInput).toBeInTheDocument();
   });
@@ -18,7 +18,7 @@ describe("Header component", () => {
   test("updates search input value on change", () => {
     render(<Header />);
     const searchInput = screen.getByPlaceholderText(
-      "Start your search"
+      "Start search"
     ) as HTMLInputElement;
     fireEvent.change(searchInput, { target: { value: "Next.js" } });
     expect(searchInput.value).toBe("Next.js");
