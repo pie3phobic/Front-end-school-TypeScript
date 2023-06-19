@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useReducer, MutableRefObject } from "react";
 import { FireIcon, StarIcon } from "@heroicons/react/solid";
 import Header from "../ui/common/Header";
 import LessonCard from "../ui/course/LessonCard";
-import ApiClient from "../infrastructure/api/getCourseData";
+//import ApiClient from "../infrastructure/api/getCourseData";
 import { Action, State, reducer } from "../domain/courseReducer";
 import VideoPlayer from "../ui/course/VideoPlayer";
 import { handleUnlockedVideo, handleLockedVideo } from "../domain/videoUtils";
 import { CourseDataProps, LessonProps, PropsDataCourse } from "../domain/types";
 import { GetServerSidePropsContext } from "next";
+import FetchCourseDataApiClient from "../infrastructure/api/getCourseData";
 const Course: React.FC<PropsDataCourse> = ({ data }) => {
   const lessonData = data.lessons;
   const initialState = {
@@ -120,13 +121,22 @@ const Course: React.FC<PropsDataCourse> = ({ data }) => {
   );
 };
 export default Course;
+// export const getServerSideProps = async (
+//   context: GetServerSidePropsContext
+// ) => {
+//   const { id } = context.query;
+//   const apiClient = await ApiClient.getInstance();
+//   const { data }: { data: CourseDataProps } = await apiClient.getCourseData(
+//     id as string
+//   );
+//   return { props: { data } };
+// };
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const { id } = context.query;
-  const apiClient = await ApiClient.getInstance();
-  const { data }: { data: CourseDataProps } = await apiClient.getCourseData(
-    id as string
-  );
+  const fetchCourseDataApiClient = await FetchCourseDataApiClient.getInstance();
+  const { data }: { data: CourseDataProps } =
+    await fetchCourseDataApiClient.fetchData(id as string);
   return { props: { data } };
 };
