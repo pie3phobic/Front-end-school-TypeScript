@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../ui/common/Header";
 import { paginate } from "../domain/paginate";
-//import ApiClient from "../infrastructure/api/fetchData";
 import { CourseProps } from "../domain/types";
 import { PaginationProps, DataProps } from "../domain/types";
 import Pagination from "../ui/common/Pagination";
@@ -42,11 +41,6 @@ const Courses: React.FC<DataProps> = ({ data }) => {
 };
 
 export default Courses;
-// export const getServerSideProps = async () => {
-//   const apiClient = await ApiClient.getInstance();
-//   const { data }: { data: DataProps } = await apiClient.fetchData();
-//   return { props: { data } };
-// };
 export const getServerSideProps = async () => {
   const fetchDataClient = await FetchDataApiClient.getInstance();
   const { data } = await fetchDataClient.fetchData();
