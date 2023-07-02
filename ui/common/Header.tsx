@@ -26,7 +26,7 @@ function Header() {
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 dark:text-white placeholder-gray-400 dark:placeholder-gray-200"
+          className="hidden md:flex flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 dark:text-white placeholder-gray-400 dark:placeholder-gray-200"
           type="text"
           placeholder={"Start search"}
         />
